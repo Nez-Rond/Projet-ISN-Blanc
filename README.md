@@ -1,3 +1,3 @@
 # Projet-ISN-Blanc
 
-#Recréation du jeu INFINIROOM
+# Recréation du jeu INFINIROOM
