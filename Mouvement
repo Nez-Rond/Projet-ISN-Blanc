@@ -37,7 +37,7 @@ def animer(): # La fonction animer permet de lancer l'animation de mouvement
         flag = 1
         move()
     
-x,y,dx,dy,flag,initialposy = 0,100,4,-4,0,y # La variable initialposy permet de stocker la positition inital de y (utile pour le saut)
+x,y,dx,dy,flag,initialposy = 0,100,4,-4,0,100 # La variable initialposy permet de stocker la positition inital de y (utile pour le saut)
 fen = Tk()
 cadre = Canvas(fen,width=250,height=250)
 cadre.pack()
