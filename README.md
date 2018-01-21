@@ -4,4 +4,7 @@
 
 # Lucas / Aymeric / Ange
 
-# Acteur :
+# Mouvement :
+
+# Gestion du Saut
+# Gestion du mouvement autour de l'arène
