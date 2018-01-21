@@ -16,15 +16,15 @@ def move(): #La fonction move défini un mouvement de droite à gauche en répet
         fen.after(30,move)
         
 def saut(): # La fonction saut permet de sauter d'une hauteur de 30 pixels
-    global x,y,dx,dy,initialposy
+    global x,y,dx,dy
     y+=dy
-    if y < initialposy - 30:
+    if y <= initialposy - 30:
         dy = 4
-    if y > initialposy-1 :
+    if y >= initialposy-1 :
         dy = -4
         return
     cadre.coords(oval,x,y,x+30,y+30)
-    fen.after(10,saut)
+    fen.after(15,saut)
     
     
 def stop(): # La fonction stop permet d'arrêter l'animation de mouvement
