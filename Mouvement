@@ -1,0 +1,53 @@
+# Partie du code de l'acteur
+
+# Permet le mouvement et le saut pendant ce mouvement via tkinter
+
+from tkinter import *
+
+def move(): #La fonction move défini un mouvement de droite à gauche en répetition
+    global x,y,dx,dy,flag
+    x+=dx
+    if x > 220 :
+        dx = -4
+    if x < 0 :
+        dx = 4
+    cadre.coords(oval,x,y,x+30,y+30)
+    if flag == 1 :
+        fen.after(30,move)
+        
+def saut(): # La fonction saut permet de sauter d'une hauteur de 30 pixels
+    global x,y,dx,dy,initialposy
+    y+=dy
+    if y < initialposy - 30:
+        dy = 4
+    if y > initialposy-1 :
+        dy = -4
+        return
+    cadre.coords(oval,x,y,x+30,y+30)
+    fen.after(10,saut)
+    
+    
+def stop(): # La fonction stop permet d'arrêter l'animation de mouvement
+    global flag
+    flag = 0
+
+def animer(): # La fonction animer permet de lancer l'animation de mouvement
+    global flag
+    if flag == 0:
+        flag = 1
+        move()
+    
+x,y,dx,dy,flag,initialposy = 0,100,4,-4,0,y # La variable initialposy permet de stocker la positition inital de y (utile pour le saut)
+fen = Tk()
+cadre = Canvas(fen,width=250,height=250)
+cadre.pack()
+oval = cadre.create_oval(x,y,x+30,y+30,width=2,fill='blue')
+bou1 = Button(fen,text="Bouger",command =animer)
+bou1.pack()
+bou2 = Button(fen,text="Arrêter",command=stop)
+bou2.pack()
+bou3 = Button(fen,text="Quitter",command=fen.destroy)
+bou3.pack()
+bou4 = Button(fen,text="Sauter",command=saut)
+bou4.pack()
+fen.mainloop()
