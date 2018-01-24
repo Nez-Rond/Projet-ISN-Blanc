@@ -1,12 +1,6 @@
-# Projet-ISN-Blanc
-
-# Recréation du jeu INFINIROOM
-
-# Lucas / Aymeric / Ange
-
-# Catégories :
-
-# Acteur
-# -- Mouvement
-
-# Environnement
+# Variables principales : 
+# x,y = coordonnées de l'acteur
+# wx,wy = Coordonnées d'avancement au sol de l'acteur
+# hx,hy = Coordonnées de saut vertical de l'acteur
+# height,width = coordonnées de l'arène
+# gravity = Détection de la surface de parcours (1 : haut / 2 : droit / 3 : bas / 4 : gauche)
