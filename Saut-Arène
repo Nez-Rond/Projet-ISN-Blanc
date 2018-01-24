@@ -1,3 +1,5 @@
+# Version de développement
+
 from random import randrange 
 from tkinter import * 
 
@@ -6,21 +8,21 @@ def animer():
     x,y=x+dx,y+dy
     print("x=",x,"y=",y)
     if x>width-40:
-        x,dx,dy=width-40,0,15
+        x,dx,dy=width-40,0,3
         gravity = 2
         print("right")
         print("ecartx=",width-x)
     if y>height-40:
-        y,dx,dy=height-40,-15,0
+        y,dx,dy=height-40,-3,0
         gravity = 3
         print("bottom")
     if x<10:
-        x,dx,dy=10,0,-15
+        x,dx,dy=10,0,-3
         gravity = 4
         print("left")
         print("ecartx=",x)
     if y<10:
-        y,dx,dy=10,15,0
+        y,dx,dy=10,3,0
         gravity = 1
         print("top")
     can1.coords(oval1,x,y,x+30,y+30)
@@ -32,27 +34,27 @@ def saut():
     y += hy
     x += hx
     if gravity == 1 :
-        if y > 40:
-            hy = -5
+        if y > 50:
+            hy = -8
         if y < 11:
             return
     if gravity == 2 :
-        if x < width - 70:
-            hx = 5
+        if x < width - 80:
+            hx = 8
         if x > width - 41:
             return
     if gravity == 3:
         if y < height - 70:
-            hy = 5
+            hy = 8
         if y > height - 41:
             return
     if gravity == 4 :
         if x > 40:
-            hx = -5
+            hx = -8
         if x < 11:
             return
     can1.coords(oval1,x,y,x+30,y+30)
-    fen.after(25,saut)
+    fen.after(32,saut)
             
         
 def arreter():
@@ -68,21 +70,21 @@ def firststep():
     global hy,hx
     print("saut")
     if gravity == 1 :
-        hy = 5
-        hx = 0
-    if gravity == 2 :
-        hy = 0
-        hx = -5
-    if gravity == 3 :
-        hy = -5
-        hx = 0
-    if gravity == 4 :
-        hy = 0
+        hy = 8
         hx = 5
+    if gravity == 2 :
+        hy = 5
+        hx = -8
+    if gravity == 3 :
+        hy = -8
+        hx = -5
+    if gravity == 4 :
+        hy = -5
+        hx = 8
     saut()
              
-x,y,dx,dy,flag,gravity=10,10,15,0,0,1
-height,width = randrange(250,501),randrange(250,501)
+x,y,dx,dy,flag,gravity=10,10,5,0,0,1
+height,width = randrange(500,1001),randrange(500,1001)
 print(height,width)
 fen1=Tk()
 fen1.title("Animation d'une balle")
