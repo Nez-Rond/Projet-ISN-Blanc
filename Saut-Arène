@@ -20,7 +20,7 @@ def Animation():
         gravity = 1
     can.coords(actor,x,y,x+30,y+30)
     if flag>0:
-        fen.after(24,animer)
+        fen.after(24,Animation)
         
 def Jump():
     global x,y,hx,hy    
@@ -46,7 +46,7 @@ def Jump():
         if x < 11:
             return
     can.coords(actor,x,y,x+30,y+30)
-    fen.after(32,saut)
+    fen.after(32,Jump)
                    
 def Stop():
     global flag
@@ -72,7 +72,7 @@ def StartJump():
     if gravity == 4 :
         hy = -5
         hx = 8
-    saut()
+    Jump()
              
 x,y,wx,wy,flag,gravity=10,10,5,0,0,1
 height,width = randrange(500,751),randrange(500,751)
