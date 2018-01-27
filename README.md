@@ -4,9 +4,4 @@
 
 # Lucas / Aymeric / Ange
 
-# Catégories :
-
-# Acteur
-# -- Mouvement
-
-# Environnement
+# Etat du jeu dans sa version actuelle
